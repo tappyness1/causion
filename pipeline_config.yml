@@ -1,0 +1,10 @@
+nodes:
+- input.visual:
+    source: ./data/demo_img_4.jpg
+    # source: 0
+- model.yolo:
+    detect: ["car", "motorcycle"]
+    model_type: "v4"
+- draw.bbox:
+    show_labels: True
+- output.screen

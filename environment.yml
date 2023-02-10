@@ -4,3 +4,4 @@ dependencies:
   - pip
   - pip:
     - peekingduck
+    - beautifulsoup4=4.11.2

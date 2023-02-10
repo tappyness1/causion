@@ -1,6 +1,6 @@
 nodes:
 - input.visual:
-    source: ./data/demo_img_4.jpg
+    source: ./data/demo_image_day.jpg
     # source: 0
 - model.yolo:
     detect: ["car", "motorcycle"]

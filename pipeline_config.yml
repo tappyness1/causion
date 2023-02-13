@@ -1,9 +1,9 @@
 nodes:
 - input.visual:
-    source: ./data/demo_image_day.jpg
+    source: ./data/View_from_Tuas_Checkpoint.jpg
     # source: 0
 - model.yolo:
-    detect: ["car", "motorcycle"]
+    detect: ["car", "motorcycle", "truck", "bus"]
     model_type: "v4"
 - draw.bbox:
     show_labels: True

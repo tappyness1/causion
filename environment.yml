@@ -3,6 +3,7 @@ dependencies:
   - python=3.8
   - pip
   - pip:
+    - requests
     - peekingduck
     - beautifulsoup4==4.11.2
     - opencv-python==4.7.0.68

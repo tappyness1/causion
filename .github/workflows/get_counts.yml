@@ -21,4 +21,6 @@ jobs:
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         $CONDA/bin/conda env update --file environment.yml --name base
     - name: Run Scraper
-      run: python -m src.main
+      run: |
+        $CONDA/bin/conda activate base
+        python -m src.main

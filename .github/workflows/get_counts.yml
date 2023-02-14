@@ -35,4 +35,4 @@ jobs:
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         git add data/counts_dataset.csv  # or git add -A to add all files
         git commit -m "Updated counts_dataset.csv"
-        git push 
+        git push "https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main || exit 0

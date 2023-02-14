@@ -1,9 +1,8 @@
 name: GetCounts
 
 on:
-# for now, disable schedule
-#   schedule:
-#     - cron: "0 4 * * *"
+  schedule:
+    - cron: "0 * * * *"
   workflow_dispatch:
   
 jobs:

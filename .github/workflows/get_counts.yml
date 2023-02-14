@@ -1,0 +1,23 @@
+name: GetCounts
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+  
+jobs:
+  get-counts:
+    runs-on: ubuntu-latest
+      steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install requirements
+        run: |
+          # $CONDA is an environment variable pointing to the root of the miniconda directory
+          $CONDA/bin/conda env update --file environment.yml --name causion
+      - name: Run Scraper
+        run: python -m src.main

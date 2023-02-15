@@ -15,6 +15,5 @@ jobs:
         env:
           HUGGINGFACE_HUB_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          cd causion
           huggingface-cli dataset create counts_dataset
           huggingface-cli dataset upload counts_dataset ./data/counts_dataset.csv --overwrite

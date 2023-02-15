@@ -18,4 +18,4 @@ jobs:
           huggingface-cli login
           cd causion
           huggingface-cli dataset create counts_dataset
-          huggingface-cli dataset upload counts_dataset ./data/counts_dataset.csv
+          huggingface-cli dataset upload counts_dataset ./data/counts_dataset.csv --overwrite

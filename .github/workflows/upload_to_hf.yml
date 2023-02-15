@@ -29,6 +29,6 @@ jobs:
           conda env update --file environment.yml --name base
       - name: Upload to HuggingFace
         env: |
-          HF_TOKEN: ${{ secret.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           python -m src.upload_to_hf

@@ -32,6 +32,8 @@ def main(cfg_path="config/config.yml", from_path = False):
                                 'large_vehicle': counts_of_object['bus'] + counts_of_object['truck']})
 
             counts_df = pd.concat([counts_df, new_row.to_frame().T], ignore_index=True)
+
+        # TODO - remove files after running inference
     
     else: 
         # alternative is to iterate and get image directly to run inference and save into csv
@@ -50,7 +52,7 @@ def main(cfg_path="config/config.yml", from_path = False):
     
     counts_df.to_csv("./data/counts_dataset.csv", index = False)
 
-    # TODO - remove files after running inference
+    
 
     return
 

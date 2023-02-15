@@ -1,0 +1,21 @@
+name: Push CSV file to Hugging Face Space
+on:
+#   schedule:
+#     - cron: '0 * * * *' # Run every hour
+  workflow_dispatch:
+jobs:
+  push_to_hf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install requirements
+        run: pip install huggingface_hub
+      - name: Push CSV file to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          huggingface-cli login
+          cd causion
+          huggingface-cli dataset create counts_dataset
+          huggingface-cli dataset upload counts_dataset ./data/counts_dataset.csv

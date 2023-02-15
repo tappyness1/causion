@@ -1,0 +1,6 @@
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+    - huggingface_hub>= 0.12
+    - datasets>=2.8.0

@@ -1235,3 +1235,7 @@ date,time,view,car,motorcycle,large_vehicle
 2023-03-01,07:14:40,View_from_Tuas_Checkpoint,0,0,1
 2023-03-01,07:14:40,View_from_Woodlands_Causeway_Towards_Johor,0,0,0
 2023-03-01,07:14:40,View_from_Woodlands_Checkpoint_Towards_BKE,0,0,0
+2023-03-01,09:13:34,View_from_Second_Link_at_Tuas,23,0,3
+2023-03-01,09:13:34,View_from_Tuas_Checkpoint,0,0,0
+2023-03-01,09:13:34,View_from_Woodlands_Causeway_Towards_Johor,5,0,2
+2023-03-01,09:13:34,View_from_Woodlands_Checkpoint_Towards_BKE,11,0,1

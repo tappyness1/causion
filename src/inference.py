@@ -71,7 +71,6 @@ class inference:
         ys = self.vertices_dict[text]['all_points_y']
         vertices = np.array(list(zip(xs, ys)))
 
-        img = cv2.imread("data/View_from_Second_Link_at_Tuas.jpg")
         masked = np.zeros((img.shape[0], img.shape[1]), 'uint8')
         rr, cc = polygon(vertices[:,1], vertices[:,0], img.shape)
         masked[rr,cc] = 1

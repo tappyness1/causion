@@ -39,20 +39,27 @@ def main(cfg_path="config/config.yml", from_path = False):
         # alternative is to iterate and get image directly to run inference and save into csv
         img_dict = get_data_direct(cfg_obj)
         for text, img_data in img_dict.items():
-            counts_of_object = inference_obj.run_inference_direct(img_data)
+            counts_of_object = inference_obj.run_inference_direct(img_data, text)
 
-            new_row = pd.Series({'date': curr_date,
-                                'time': curr_time, 
-                                'view': text,
-                                'car': counts_of_object['car'],
-                                'motorcycle': counts_of_object['motorcycle'],
-                                'large_vehicle': counts_of_object['bus'] + counts_of_object['truck']})
+            # todo: output dictionary {sg: {car: , ...}, jh: {...}}
+            for key in counts_of_object.keys():
+            # new_row = pd.Series ... counts_of_object[key]['car']
+                # new_row = pd.Series({'date': curr_date,
+                #                     'time': curr_time, 
+                #                     'view': text,
+                #                     'car': counts_of_object['car'],
+                #                     'motorcycle': counts_of_object['motorcycle'],
+                #                     'large_vehicle': counts_of_object['bus'] + counts_of_object['truck']})
+                new_row = pd.Series({'date': curr_date,
+                                    'time': curr_time, 
+                                    'view': f"{text}_{key}",
+                                    'car': counts_of_object[key]['car'],
+                                    'motorcycle': counts_of_object[key]['motorcycle'],
+                                    'large_vehicle': counts_of_object[key]['bus'] + counts_of_object[key]['truck']})
 
-            counts_df = pd.concat([counts_df, new_row.to_frame().T], ignore_index=True)
+                counts_df = pd.concat([counts_df, new_row.to_frame().T], ignore_index=True)
     
     counts_df.to_csv("./data/counts_dataset.csv", index = False)
-
-    
 
     return
 

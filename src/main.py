@@ -52,7 +52,7 @@ def main(cfg_path="config/config.yml", from_path = False):
                 #                     'large_vehicle': counts_of_object['bus'] + counts_of_object['truck']})
                 new_row = pd.Series({'date': curr_date,
                                     'time': curr_time, 
-                                    'view': f"{text}_{key}",
+                                    'view': f"{text}_to_{key}",
                                     'car': counts_of_object[key]['car'],
                                     'motorcycle': counts_of_object[key]['motorcycle'],
                                     'large_vehicle': counts_of_object[key]['bus'] + counts_of_object[key]['truck']})

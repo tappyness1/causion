@@ -1,4 +1,5 @@
-from peekingduck.pipeline.nodes.model import yolo as pkd_yolo
+# from peekingduck.pipeline.nodes.model import yolo as pkd_yolo
+from peekingduck.pipeline.nodes.model import yolox as pkd_yolox
 import cv2
 from collections import defaultdict
 import numpy as np
@@ -21,7 +22,7 @@ def get_counts(inference_outputs):
         counts_dict[item] += 1
 
     # fill in missing keys and set their number to zero
-    missing_keys = [item for item in ["car", "motorcycle", "motorbike", "truck", "bus"] if item not in counts_dict.keys()]
+    missing_keys = [item for item in ["car", "motorcycle", "truck", "bus"] if item not in counts_dict.keys()]
     
     for key in missing_keys:
         counts_dict[key] = 0
@@ -60,7 +61,7 @@ def get_vertices_dict(polygons):
 class inference:
 
     def __init__(self):
-        self.yolo_node = pkd_yolo.Node(model_type = "v4", detect=["car", "motorcycle", "truck", "bus"])
+        self.yolo_node = pkd_yolox.Node(model_type = "yolox-s", detect=["car", "motorcycle", "truck", "bus"])
         json_file = open("data/shapes_to_sg_only.json")
         polygons = json.load(json_file)
 

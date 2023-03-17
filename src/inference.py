@@ -22,7 +22,7 @@ def get_counts(inference_outputs):
         counts_dict[item] += 1
 
     # fill in missing keys and set their number to zero
-    missing_keys = [item for item in ["car", "motorcycle", "truck", "bus"] if item not in counts_dict.keys()]
+    missing_keys = [item for item in ["car", "motorcycle", "motorbike", "truck", "bus"] if item not in counts_dict.keys()]
     
     for key in missing_keys:
         counts_dict[key] = 0
@@ -108,6 +108,7 @@ class inference:
         Returns:
             _type_: _description_
         """
+
         img_decoded = cv2.imdecode(np.frombuffer(img_bytes, np.uint8), -1)
         img_decoded = cv2.cvtColor(img_decoded, cv2.COLOR_BGR2RGB)
         

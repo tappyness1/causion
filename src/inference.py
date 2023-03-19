@@ -61,7 +61,7 @@ def get_vertices_dict(polygons):
 class inference:
 
     def __init__(self):
-        self.yolo_node = pkd_yolox.Node(model_type = "yolox-s", detect=["car", "motorcycle", "truck", "bus"])
+        self.yolo_node = pkd_yolox.Node(model_type = "yolox-l", detect=["car", "motorcycle", "truck", "bus"])
         json_file = open("data/shapes_to_sg_only.json")
         polygons = json.load(json_file)
 

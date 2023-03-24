@@ -55,7 +55,7 @@ def main(cfg_path="config/config.yml", from_path = False):
                                     'time': curr_time, 
                                     'view': f"{text}_to_{key}",
                                     'car': counts_of_object[key]['car'],
-                                    'motorcycle': counts_of_object['motorcycle'] + counts_of_object['motorbike'] + counts_of_object['bicycle'],
+                                    'motorcycle': counts_of_object[key]['motorcycle'] + counts_of_object[key]['motorbike'] + counts_of_object[key]['bicycle'],
                                     'large_vehicle': counts_of_object[key]['bus'] + counts_of_object[key]['truck']})
 
                 counts_df = pd.concat([counts_df, new_row.to_frame().T], ignore_index=True)

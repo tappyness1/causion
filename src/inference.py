@@ -22,7 +22,7 @@ def get_counts(inference_outputs):
         counts_dict[item] += 1
 
     # fill in missing keys and set their number to zero
-    missing_keys = [item for item in ["car", "motorcycle", "motorbike", "truck", "bus"] if item not in counts_dict.keys()]
+    missing_keys = [item for item in ["car", "motorcycle", "bicycle", "motorbike", "truck", "bus"] if item not in counts_dict.keys()]
     
     for key in missing_keys:
         counts_dict[key] = 0
@@ -60,8 +60,10 @@ def get_vertices_dict(polygons):
 
 class inference:
 
-    def __init__(self):
-        self.yolo_node = pkd_yolox.Node(model_type = "yolox-l", detect=["car", "motorcycle", "truck", "bus"])
+    def __init__(self, cfg_obj):
+        self.yolo_node = pkd_yolox.Node(model_type = "yolox-l", detect=["car", "bicycle", "motorcycle", "truck", "bus"])
+        self.yolo_node.score_threshold = cfg_obj['score_threshold']
+        self.yolo_node.input_size = cfg_obj['input_size']
         json_file = open("data/shapes_to_sg_only.json")
         polygons = json.load(json_file)
 
@@ -120,6 +122,7 @@ class inference:
         # todo: refactor
         yolo_input_sg = {"img": img_masked_sg}
         yolo_output_sg = self.yolo_node.run(yolo_input_sg)
+        # print (yolo_output_sg)
         output_counts_dict_sg = get_counts(yolo_output_sg)
         output_counts_dict['sg'] = output_counts_dict_sg
 
@@ -127,6 +130,7 @@ class inference:
         # todo : refactor
         yolo_input_jh = {"img": img_masked_jh}
         yolo_output_jh = self.yolo_node.run(yolo_input_jh)
+        # print (yolo_output_jh)
         output_counts_dict_jh = get_counts(yolo_output_jh)
         output_counts_dict['jh'] = output_counts_dict_jh
 

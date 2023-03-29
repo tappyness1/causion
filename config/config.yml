@@ -1,3 +1,4 @@
 data_source: https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic-cameras/woodlands.html/
 score_threshold: 0.1
+iou_threshold: 0.6
 input_size: 1080

@@ -1,4 +1,4 @@
-# from peekingduck.pipeline.nodes.model import yolo as pkd_yolo
+from peekingduck.pipeline.nodes.model import yolo as pkd_yolo
 from peekingduck.pipeline.nodes.model import yolox as pkd_yolox
 import cv2
 from collections import defaultdict
@@ -61,8 +61,10 @@ def get_vertices_dict(polygons):
 class inference:
 
     def __init__(self, cfg_obj):
-        self.yolo_node = pkd_yolox.Node(model_type = "yolox-l", detect=["car", "bicycle", "motorcycle", "truck", "bus"])
+        # self.yolo_node = pkd_yolox.Node(model_type = "yolox-l", detect=["car", "bicycle", "motorcycle", "truck", "bus"])
+        self.yolo_node = pkd_yolo.Node(model_type = "v4", detect=["car", "bicycle", "motorcycle", "truck", "bus"])    
         self.yolo_node.score_threshold = cfg_obj['score_threshold']
+        self.yolo_node.iou_threshold = cfg_obj['iou_threshold']
         self.yolo_node.input_size = cfg_obj['input_size']
         json_file = open("data/shapes_to_sg_only.json")
         polygons = json.load(json_file)

@@ -6751,3 +6751,11 @@ date,time,view,car,motorcycle,large_vehicle
 2023-03-29,16:37:23,View_from_Woodlands_Causeway_Towards_Johor_to_jh,0,0,0
 2023-03-29,16:37:23,View_from_Woodlands_Checkpoint_Towards_BKE_to_sg,0,0,0
 2023-03-29,16:37:23,View_from_Woodlands_Checkpoint_Towards_BKE_to_jh,1,0,0
+2023-03-29,17:08:45,View_from_Second_Link_at_Tuas_to_sg,0,0,0
+2023-03-29,17:08:45,View_from_Second_Link_at_Tuas_to_jh,3,3,1
+2023-03-29,17:08:45,View_from_Tuas_Checkpoint_to_sg,0,0,0
+2023-03-29,17:08:45,View_from_Tuas_Checkpoint_to_jh,2,0,2
+2023-03-29,17:08:45,View_from_Woodlands_Causeway_Towards_Johor_to_sg,0,0,0
+2023-03-29,17:08:45,View_from_Woodlands_Causeway_Towards_Johor_to_jh,0,0,1
+2023-03-29,17:08:45,View_from_Woodlands_Checkpoint_Towards_BKE_to_sg,0,0,0
+2023-03-29,17:08:45,View_from_Woodlands_Checkpoint_Towards_BKE_to_jh,6,0,0

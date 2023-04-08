@@ -7,7 +7,7 @@ It serves as a way to CAUTION would-be travellers the peak period of the causewa
 - [Description](#description)
 - [Installation](#installation)
 - [Execution](#execution)
-- [Authors](#authors)
+- [Developers](#developers)
 
 
 ## Description
@@ -31,7 +31,7 @@ Setting up environment
 How to run <br>
 `python -m src.main`
 
-## Authors
+## Developers
 - Ce Zheng Neo
 - Lien Dinh
 - Alvian Jonathan Sutrisno

@@ -2,24 +2,33 @@
 [CAUSION](https://huggingface.co/spaces/GT6242Causion/Causion) is a visualisation of the traffic in the Johor-Singapore CAUSeway using viSION models. 
 It serves as a way to CAUTION would-be travellers the peak period of the causeway crossings.
 
+## Table Of Content
 
-## Methodology
+- [Description](#description)
+- [Installation](#installation)
+- [Execution](#execution)
+- [Authors](#authors)
 
-<p align="center">
-  <img src = "https://imgur.com/XgoowgH">
-</p>
 
-- Data scraping / Image query
-- Image processing / Segmentation
-- Object Detection and other predictive models
-- Visualization dashboard on Hugging Faces Spaces
+## Description
+
+
+![flow](https://github.com/tappyness1/causion/blob/main/Artboard%201-100.jpg)
+
+
+CAUSION incorporates cutting-edge technologies in building its analytics tool. In brief, CAUSION comprises 4 distinguishing aspects of innovation to accomplish its goals. Those are:<br>
+  1. Data scraping / Image query  <br>
+  2. Image processing / Segmentation   <br> 
+  3. Object Detection and other predictive models  <br>
+  4. Visualization dashboard on Hugging Faces Spaces<br>
 
 
 ## Installation
 Setting up environment  
 `conda create --name causion -f environment.yml`
 
-How to run
+## Execution
+How to run <br>
 `python -m src.main`
 
 ## Authors

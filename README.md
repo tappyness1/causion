@@ -1,4 +1,8 @@
-# CAUSION
+<a href="https://huggingface.co/spaces/GT6242Causion/Causion">
+    <img src="https://github.com/tappyness1/causion/blob/main/logo.png" alt="Causion logo" title="Causion" align="right" height="80"/>
+</a>
+
+# CAUSION 
 [CAUSION](https://huggingface.co/spaces/GT6242Causion/Causion) is a visualisation of the traffic in the Johor-Singapore CAUSeway using viSION models. 
 It serves as a way to CAUTION would-be travellers the peak period of the causeway crossings.
 
